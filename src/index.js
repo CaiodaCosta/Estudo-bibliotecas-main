@@ -27,29 +27,4 @@ async function pegaArquivo(caminhoDoArquivo){
 
 export default pegaArquivo;
 
-//função assincrona promise com then VVVV
-// function pegaArquivo(caminhoDoArquivo){
-//     const encoding = 'utf-8';
-//     fs.promises.readFile(caminhoDoArquivo, encoding)
-//         .then((texto) => console.log(chalk.green(texto)))
-//         .catch((trataErro))
-// }
-
-
-//função sem promise
-// function pegaArquivo(caminhoDoArquivo){
-//     const encoding = 'utf-8';
-//     fs.readFile(caminhoDoArquivo, encoding, (erro, texto)=>{
-//         if (erro){
-//             trataErro(erro);
-//         }
-//         console.log(chalk.green(texto));
-//     })
-// };
-
-// pegaArquivo('./arquivos/texto.md')
-// pegaArquivo('./arquivos/')
-
-//  \[[^[\]]*?\]
-
-// \(https?:\/\/[^\s?#.].[^\s]*\) Aula https://cursos.alura.com.br/course/nodejs-criando-primeira-biblioteca/task/112714
+ // Aula https://cursos.alura.com.br/course/nodejs-criando-primeira-biblioteca/task/112714

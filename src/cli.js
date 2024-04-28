@@ -10,10 +10,21 @@ function imprimeLista(resultado, identificador = ''){
         resultado);
     
 }
-
+//Fs.lstatsync retorna informações do link que está sendo usado
 async function processaTexto(argumentos){
     const caminho = argumentos[2];
+
+    try {
+        fs.lstatSync(caminho);
+    } catch(erro){
+        if (erro.code === 'ENOENT') {
+            console.log('arquivo ou diretório não existe');
+            return;
+        }
+    }
     
+    //if utilizado para retornar um caminho direto para uma posta ou um diretorio
+    //if verifica se o caminho é um arquivo e um diretorio e caso seja qualquer um dos dois retorna uma promessa
     if (fs.lstatSync(caminho).isFile()){
         const resultado = await pegaArquivo(argumentos);
     } else if (fs.lstatSync(caminho).isDirectory){
